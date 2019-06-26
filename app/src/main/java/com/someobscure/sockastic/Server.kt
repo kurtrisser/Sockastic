@@ -21,13 +21,13 @@ import kotlin.concurrent.thread
 val serverClientSessions: MutableList<ServerClientSession> = synchronizedList(ArrayList<ServerClientSession>())
 
 var serving = true
-var server = ServerSocket(localServerPort)
+var server = ServerSocket(LOCAL_SERVER_PORT)
 var localWiFiAddr: String = "ipAddr:port"
 
 fun serverStart(context: Context, view: TextView, serverMessages: StringBuilder) {
   serverMessages.clear()
   if (server.isClosed) {
-    server = ServerSocket(localServerPort)
+    server = ServerSocket(LOCAL_SERVER_PORT)
   }
   serving = true
   localWiFiAddr = obtainWifiIpAddress(context) + ":" + server.localPort

@@ -10,8 +10,8 @@ import java.net.Socket
 class SocketClient(private val msgBuilder: StringBuilder) {
   var socket: Socket? = null
 
-  val defaultSvrIp = localServerIp
-  val defaultSvrPort = localServerPort
+  val defaultSvrIp = LOCAL_SERVER_IP
+  val defaultSvrPort = LOCAL_SERVER_PORT
   private var ip: String = defaultSvrIp
   private var port: Int = defaultSvrPort
   private var writer: PrintWriter? = null

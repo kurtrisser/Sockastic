@@ -18,14 +18,10 @@ import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
-
-//TODO: Final clean up.
-//TODO: About.
-//TODO: Provide good but simple documentation - README.md.
 //TODO: Provide small video showing typical usage.
 
-const val localServerIp = "127.0.0.1"
-const val localServerPort = 9999
+const val LOCAL_SERVER_IP = "127.0.0.1"
+const val LOCAL_SERVER_PORT = 9985
 const val DRAWABLE_BOTTOM = 3
 
 class MainActivity : AppCompatActivity() {

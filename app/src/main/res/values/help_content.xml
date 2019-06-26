@@ -50,7 +50,7 @@
     Use the <i>IP address</i> and <i>port</i> to connect to the <b>Socket Server</b> from another LAN device, if desired.</br>
     <p>
     <br>An example using <i>TELNET</i>:</br>
-    <br><b>telnet 192.168.1.164 9999</b></br>
+    <br><b>telnet 192.168.1.164 9985</b></br>
     </p>
     <br>When the <b>Socket Server</b> is running, the <b>STOP SERVER</b> button at the top of the screen includes a
     checkbox to 'disconnect all clients'.  It is checked by default.  It shuts down any active client connections
