@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Portrait -->
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     tools:context=".MainActivity"
+     android:paddingStart="4sp"
+     android:paddingEnd="4sp"
+     android:layout_marginBottom="16dp"
+     android:orientation="vertical">
+
+  <ScrollView
+       android:id="@+id/outerScrollView"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:fillViewport="true"
+       android:isScrollContainer="true"
+       android:nestedScrollingEnabled="true">
+
+    <android.support.constraint.ConstraintLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintHorizontal_bias="0.5"
+         app:layout_constraintEnd_toEndOf="parent">
+
+      <LinearLayout
+           android:id="@+id/serverLinearLayout"
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:orientation="vertical"
+           android:background="#2F0F0F7F"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintBottom_toTopOf="@+id/divider"
+           android:layout_weight="1">
+
+        <LinearLayout
+             android:orientation="horizontal"
+             android:layout_width="match_parent"
+             android:layout_height="@dimen/bar_height_extra">
+
+          <Button
+               android:id="@+id/btn_server"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:drawableBottom="@drawable/busy_stripe"
+               android:onClick="onServerButtonClick"
+               android:text="@string/start_server"
+               android:textSize="@dimen/main_text_size"
+               android:layout_weight="3"/>
+
+          <CheckBox
+               android:id="@+id/hardShutdown"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:hint="@string/disconnect_all_clients"
+               android:visibility="gone"
+               android:background="#C9F3E188"/>
+        </LinearLayout>
+
+        <TextView
+             android:id="@+id/serverTextView"
+             android:text="@string/socket_server_messages"
+             android:layout_width="match_parent"
+             android:layout_height="0dp"
+             android:layout_margin="2sp"
+             android:background="#B2D2C2"
+             android:scrollbars="vertical"
+             android:scrollbarSize="16dp"
+             android:gravity="bottom"
+             style="@android:style/Widget.Material.TextView"
+             android:textSize="@dimen/main_text_size"
+             android:layout_weight="4"/>
+
+      </LinearLayout>
+
+      <View
+           android:id="@+id/divider"
+           android:layout_width="387dp"
+           android:layout_height="6dp"
+           android:background="?android:attr/listDivider"
+           app:layout_constraintTop_toTopOf="parent"
+           android:layout_marginTop="333dp"
+           app:layout_constraintBottom_toBottomOf="parent"
+           android:layout_marginBottom="333dp"
+           app:layout_constraintStart_toStartOf="parent"
+           android:layout_marginStart="8dp"
+           android:layout_marginEnd="8dp"
+           app:layout_constraintEnd_toEndOf="parent"/>
+
+      <LinearLayout
+           android:id="@+id/clientLinearLayout"
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_weight="1"
+           android:background="#0F2F0F7F"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/divider"
+           android:weightSum="7">
+
+        <LinearLayout
+             android:id="@+id/client_buttons_connect"
+             android:orientation="horizontal"
+             android:layout_width="match_parent"
+             android:layout_height="@dimen/bar_height"
+             android:layout_gravity="top">
+
+          <Button
+               android:id="@+id/btn_connect_client"
+               android:text="@string/connect"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:onClick="onClientConnect"
+               android:textSize="@dimen/main_text_size"
+               android:enabled="false"
+               android:layout_weight="2"/>
+
+          <EditText
+               android:id="@+id/requestIp"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:singleLine="true"
+               android:layout_weight="2"
+               style="@android:style/Widget.DeviceDefault.EditText"
+               android:hint="@string/ip"
+               android:background="@drawable/rectastic"
+               android:layout_marginStart="4sp"
+               android:layout_marginEnd="2sp"
+               android:importantForAutofill="no"/>
+
+          <EditText
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:ems="10"
+               android:singleLine="true"
+               android:id="@+id/requestPort"
+               android:layout_weight="1"
+               style="@android:style/Widget.DeviceDefault.EditText"
+               android:hint="@string/port"
+               android:inputType="number"
+               android:background="@drawable/rectastic"
+               android:layout_marginStart="2sp"
+               android:layout_marginEnd="2sp"
+               android:importantForAutofill="no"/>
+        </LinearLayout>
+        <!-- Now the second row of client controls -->
+        <LinearLayout
+             android:id="@+id/client_buttons_send"
+             android:orientation="horizontal"
+             android:layout_width="match_parent"
+             android:layout_height="@dimen/bar_height"
+             android:layout_gravity="top">
+
+          <Button
+               android:id="@+id/btn_send_receive"
+               android:text="@string/send"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:onClick="onClientSend"
+               android:textSize="@dimen/main_text_size"
+               android:enabled="false"
+               android:layout_weight="1"/>
+
+          <EditText
+               android:id="@+id/requestText"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="3"
+               android:enabled="false"
+               android:ems="10"
+               android:singleLine="true"
+               style="@android:style/Widget.DeviceDefault.Light.EditText"
+               android:hint="@string/text_to_be_sent"
+               android:inputType="text"
+               android:background="@drawable/rectastic"
+               android:layout_marginStart="2dip"
+               android:layout_marginEnd="4dip"
+               android:importantForAutofill="no"/>
+        </LinearLayout>
+
+        <TextView
+             android:id="@+id/clientTextView"
+             android:text="@string/socket_client_messages"
+             android:layout_width="match_parent"
+             android:layout_height="0dp"
+             android:scrollbars="vertical"
+             android:gravity="bottom"
+             android:textSize="18sp"
+             android:scrollbarSize="16dp"
+             android:background="#AACCD1"
+             android:layout_weight="5"
+             />
+      </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+  </ScrollView>
+</LinearLayout>

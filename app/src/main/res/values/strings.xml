@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Sockastic</string>
+    <string name="start_server">START SERVER</string>
+    <string name="stop_server">Stop Server</string>
+    <string name="sockastic">Sockastic</string>
+    <string name="start_clients">START CLIENTS</string>
+    <string name="exercise">EXERCISE</string>
+    <string name="connect">CONNECT</string>
+    <string name="disconnect">DISCONNECT</string>
+    <string name="socket_server_messages">Socket server messages:</string>
+    <string name="socket_client_messages">Socket client messages:</string>
+    <string name="example_socket_ops">Example Socket operations using Kotlin on Android </string>
+  <string name="text_to_be_sent">request to be sent</string>
+    <string name="disconnect_all_clients">disconnect <b>all</b> clients</string>
+    <string name="demo">DEMO</string>
+    <string name="send">SEND</string>
+    <string name="ip">ip</string>
+    <string name="port">port</string>
+</resources>

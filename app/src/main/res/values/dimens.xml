@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="main_text_size">18sp</dimen>
+  <dimen name="min_bar_height">36sp</dimen>
+  <dimen name="bar_height">42sp</dimen>
+  <dimen name="bar_height_extra">48sp</dimen>
+</resources>

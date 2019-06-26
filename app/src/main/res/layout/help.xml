@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/contentTextLayout"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:weightSum="1"
+              android:orientation="vertical"
+              android:background="@color/aboutBackground"
+              android:layout_margin="4dip">
+
+  <TextView
+       android:text="contentTextView"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1"
+       android:scrollbars="vertical"
+       android:scrollbarSize="16dp"
+       android:id="@+id/contentTextView"
+       android:gravity="top"/>
+
+</LinearLayout>
+
+
+       <!--style="@android:style/Widget.Material.TextView"-->

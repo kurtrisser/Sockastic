@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- -->
+  <string name="server_title"><![CDATA[<u><b>Socket Server</b></u>]]></string>
+  <string name="client_title"><![CDATA[<u><b>Socket Client</b></u>]]></string>
+  <string name="overview_title"><![CDATA[<b><i>Sockastic</i></b>]]></string>
+  <string name="about_title"><![CDATA[<b><i>Sockastic</i></b>]]></string>
+  <!-- -->
+  <string name="overview_all"><![CDATA[
+  <b>Quick Sockets Demonstration</b>
+  A simple Android app that demonstrates the use of server and client sockets.<br>
+  <br>Source code and Android Studio project on GitHub:</br>
+  <p>http://github.com/kurtrisser/Sockastic.git </p>
+  The app has two parts, a <b>Socket Server</b> and a <b>Socket Client</b>.<br>
+  <br>
+  Quick Demonstration Steps:<br>
+
+  <ol>
+  <li>Press \'START SERVER\'.</li>
+  <li>Press \'CONNECT\'.</li>
+  <li>Enter \'Au\' in the \'request\' prompt.</li>
+  <li>Press \'SEND\'.</li>
+  <li>Observe the received reply \'Au 79 Gold\' in the client and server messages.</li>
+  <li>Optionally, enter more requests such as \'Fe\', \'Hg\', or a number 1..118, or an element name.</li>
+  <li>Press \'DISCONNECT\'.</li>
+  <li>Press \'STOP SERVER\'.</li>
+  </ol><br>
+  This creates both a server and a client on this device, then connects to itself.  However, the
+  server will accept connections from any visible device on the network, such as a telnet session from another computer.<br>
+  Likewise, the client may be used to connect to another visible socket server on the network.  There is an echo server on
+  the internet at 52.20.16.20, port 30000 that accepts connections and echos back any text.  <i>This server is not associated
+  with the author.</i><br>
+  <b>Be sure to watch the client and server messages during the interaction.</b><br>
+  ]]></string>
+  <!-- -->
+  <string name="server_all"><![CDATA[
+    The <b>Socket Server</b>
+    creates a local ServerSocket that listens for incoming socket connections.<br>
+    Start and stop the server using the <b>START SERVER</b>/<b>STOP SERVER</b> button at the top of the screen.<br>
+    Once started, the server may accept socket connections from other devices on the network, including localhost.<br>
+    The server provides a very simple atomic element lookup \'service\'.  It accepts either an atomic number (1..118),
+    an element symbol (i.e., \'Au\', etc), or an element name (i.e., \'Gold\', etc.) as valid input.  It returns all three.<br>
+    <br>Example:
+    <ol>
+      <li>Client sends: \'79\'  (<i>no quotes!</i>)</li>
+      <li>Client receives: \'Au 79 Gold\'</li>
+    </ol>
+    <br>
+    Note that when the <b>Socket Server</b> starts, it displays the time, <i>IP address</i>, and <i>port</i>.
+    Use the <i>IP address</i> and <i>port</i> to connect to the <b>Socket Server</b> from another LAN device, if desired.</br>
+    <p>
+    <br>An example using <i>TELNET</i>:</br>
+    <br><b>telnet 192.168.1.164 9999</b></br>
+    </p>
+    <br>When the <b>Socket Server</b> is running, the <b>STOP SERVER</b> button at the top of the screen includes a
+    checkbox to 'disconnect all clients'.  It is checked by default.  It shuts down any active client connections
+    before stopping the server.  If this is unchecked, when the server is stopped, any active client connections will
+    remain active, but the server will not accept any new connections.</br>
+  ]]></string>
+  <!-- -->
+  <string name="client_all"><![CDATA[
+    The <b>Socket Client</b>
+    If an <i>IP address</i> / <i>port</i> is entered, pressing \'CONNECT\' will attempt to open a connection.<br>
+    If <b>no</b> <i>IP address</i> or <i>port</i> is specified, and the local <b>Socket Server</b>
+    has been started, the client will initiate a socket connection to the local <b>Socket Server</b>.<br>
+    The <b>\'CONNECT\'</b> button is disabled when no <i>IP address</i> or <i>port</i> is specified, and the local
+    <b>Socket Server</b> is <b>not</b> running.<br>
+    Once connected, text may be entered into the request field, and the <b>\'SEND\'</b> button pressed.<br>
+  ]]></string>
+  <!-- -->
+  <string name="about_all"><![CDATA[
+    <i><b>Sockastic</b></i> is a simple demonstration program written in Kotlin for the Android platform that performs
+    some basic socket operations. It also shows a variety of other simple constructs for handling UI operations, etc.<br>
+    <p>Some small but useful examples collected here include:</p>
+    <ul>
+    <li>Using ServerSocket to create a server.</li>
+    <li>Accepting and handling multiple client sessions.</li>
+    <li>Processing and responding to client requests.</li>
+    <li>Using Socket to create a client.</li>
+    <li>Connecting and interacting with a server.</li>
+    <br></br>
+    <li>Using simple markup in TextView.</li>
+    <li>Context aware UI components.</li>
+    <li>Scrolling discrete TextViews within a ScrollView.</li>
+    <li>Using soft keyboard for IP address entry.</li>
+    <li>Kotlin language features.</li>
+    <li>EditText clear widget.</li>
+    <li>Long press context menu.</li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    </ul>
+    <i><b>Sockastic</b></i> is developed by Kurt Risser.  Many portions of the program were inspired and informed by
+    many fine examples from other developers who share their creative efforts on GitHub and elsewhere.<br>
+  ]]></string>
+</resources>
